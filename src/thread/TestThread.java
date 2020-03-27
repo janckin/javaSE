@@ -1,7 +1,6 @@
 package thread;
 
 
-import org.junit.jupiter.api.Test;
 
 public class TestThread {
 
@@ -19,7 +18,6 @@ public class TestThread {
 
     }
 
-    @Test
     public void testImplRunnable() {
         Window win = new Window();
 

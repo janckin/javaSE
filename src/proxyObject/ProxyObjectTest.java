@@ -1,10 +1,6 @@
 package proxyObject;
 
-
-import org.junit.jupiter.api.Test;
-
 public class ProxyObjectTest {
-    @Test
     public void test() {
         Object3 obj = new ProxyObject();
         obj.action();

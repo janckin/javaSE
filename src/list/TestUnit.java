@@ -1,16 +1,11 @@
 package list;
 
-
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class TestUnit {
 
     public TestUnit() {
-        // TODO Auto-generated constructor stub
     }
 
     //@Test
@@ -33,7 +28,6 @@ public class TestUnit {
         System.out.println(linkList.indexOf(t3));
     }
 
-    @Test
     public void testSqListClear() {
         SqList sqList = new SqList(26);
         char a = 'a';
@@ -47,7 +41,6 @@ public class TestUnit {
         System.out.println(sqList.get(0));
     }
 
-    @Test
     public void testConcurrentModException() {
         List<String> list = new ArrayList<>();
         list.add("first");

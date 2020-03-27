@@ -1,9 +1,9 @@
 package dataStructures.tree.test;
 
-import a.dataStructures.tree.BinarySearchNode;
-import a.dataStructures.tree.BinarySearchTree;
-import a.dataStructures.tree.Node;
-import a.dataStructures.tree.TreeHelper;
+import dataStructures.tree.BinarySearchNode;
+import dataStructures.tree.BinarySearchTree;
+import dataStructures.tree.Node;
+import dataStructures.tree.TreeHelper;
 
 public class testTree {
 
