@@ -20,7 +20,6 @@ public class Costumer implements Runnable {
         try {
             cl.sellProduct(num);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

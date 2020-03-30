@@ -4,7 +4,6 @@ public class DuLinkList {
     private DuLNode head;
 
     public DuLinkList() {
-        // TODO Auto-generated constructor stub
         head = new DuLNode();
         /*带头节点时必须设为自己，不然后续再insert 的时候会有问题
          * head.setNext(head);

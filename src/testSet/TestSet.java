@@ -12,12 +12,10 @@ import java.util.TreeSet;
 public class TestSet {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         Comparator<Person> comparetor = new Comparator<Person>() {
 
             @Override
             public int compare(Person o1, Person o2) {
-                // TODO Auto-generated method stub
                 Person p1 = (Person) o1;
                 Person p2 = (Person) o2;
                 if (p1.getId() != p2.getId()) {

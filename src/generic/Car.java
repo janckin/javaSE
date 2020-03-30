@@ -6,7 +6,6 @@ public class Car implements Comparable<Car> {
     private String brand;
 
     public Car() {
-        // TODO Auto-generated constructor stub
     }
 
     public Car(String carNo, String brand) {
@@ -67,7 +66,6 @@ public class Car implements Comparable<Car> {
      *定制treeSet里面的顺序
      */
     public int compareTo(Car car) {
-        // TODO Auto-generated method stub
         if (car == null) {
             return -1;
         }

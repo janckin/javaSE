@@ -8,7 +8,6 @@ import java.util.TimeZone;
 public class TestMain {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         Calendar cal = Calendar.getInstance();
         TimeZone zone = TimeZone.getTimeZone("GMT+8:00");
         Calendar cal_zone = Calendar.getInstance(zone);

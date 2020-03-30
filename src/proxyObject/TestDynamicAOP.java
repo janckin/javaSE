@@ -14,7 +14,6 @@ class SuperMan implements Man {
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
         System.out.println("I can run fast!");
     }
 

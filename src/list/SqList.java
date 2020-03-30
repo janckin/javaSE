@@ -5,7 +5,6 @@ public class SqList implements IList {
     protected int curLen;
 
     public SqList() {
-        // TODO Auto-generated constructor stub
     }
 
     public SqList(int maxSize) {
@@ -21,7 +20,6 @@ public class SqList implements IList {
 
     @Override
     public int length() {
-        // TODO Auto-generated method stub
         return curLen;
     }
 
@@ -32,7 +30,6 @@ public class SqList implements IList {
 
     @Override
     public void insert(int index, Object o) {
-        // TODO Auto-generated method stub
         testIndex(index);
         if (listElem.length == curLen) {
             throw new RuntimeException("顺序表已满");

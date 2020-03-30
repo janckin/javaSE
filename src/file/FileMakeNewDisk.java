@@ -24,7 +24,6 @@ public class FileMakeNewDisk {
             }
 
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
             System.out.println(">>execute error");
             file_path.delete();

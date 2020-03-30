@@ -7,7 +7,6 @@ public class DuLNode {
     private Object data;
 
     public DuLNode() {
-        // TODO Auto-generated constructor stub
     }
 
     public DuLNode(Object data) {

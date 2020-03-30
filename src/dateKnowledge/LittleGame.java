@@ -3,7 +3,6 @@ package dateKnowledge;
 public class LittleGame {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         //9*9 multiply
         for (int i = 1; i < 10; i++) {
 

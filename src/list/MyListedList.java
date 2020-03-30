@@ -4,12 +4,10 @@ public class MyListedList extends MyAbstractList {
     private Node first, last;
 
     public MyListedList() {
-        // TODO Auto-generated constructor stub
     }
 
     public MyListedList(Object[] objects) {
         super(objects);
-        // TODO Auto-generated constructor stub
     }
 
     public void addFirst(Object o) {
@@ -92,7 +90,6 @@ public class MyListedList extends MyAbstractList {
 
     @Override
     public void clear() {
-        // TODO Auto-generated method stub
         first = last = null;
     }
 
@@ -139,19 +136,16 @@ public class MyListedList extends MyAbstractList {
 
     @Override
     public int lastIndexOf(Object o) {
-        // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
     public Object remove(int index) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public Object set(int index, Object o) {
-        // TODO Auto-generated method stub
         return null;
     }
 
