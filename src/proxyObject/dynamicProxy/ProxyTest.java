@@ -18,5 +18,19 @@ public class ProxyTest {
         MachineProxy proxy2 = new MachineProxy(car);
         Machine plane = proxy.getMachine();
         plane.brand();
+
+        //通用动态代理
+        try {
+            System.out.println("------------");
+            CommonProxy commonProxy = new CommonProxy(car);
+            Machine commonProxyCar2 = (Machine) commonProxy.getInstance();
+            commonProxyCar2.brand();
+
+            System.out.println("------------");
+            Car commonProxyCar = (Car) commonProxy.getInstance();//这样会报错
+            commonProxyCar.brand();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

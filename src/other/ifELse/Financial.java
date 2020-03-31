@@ -1,4 +1,4 @@
-package testLambda;
+package other.ifELse;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +7,9 @@ import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+/**
+ * use lambda to improve calTaxIfElse method
+ */
 public class Financial {
     public static double calTaxIfElse(int income) {
         double tax;
@@ -50,6 +53,11 @@ public class Financial {
         return map;
     }
 
+    /**
+     * use simple factory pattern to solve the if-else
+     * @param income income from customer
+     * @return factory in map interface
+     */
     public static double calTaxTreeMap(int income) {
         //build up the map to store the condition
         Map<Integer, Function<Double, Double>> map = new TreeMap<>();
