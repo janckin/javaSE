@@ -11,5 +11,8 @@ public class StrategyTest {
         Customer commonCustomer = CustomerManager.getCustomerByTypeName("COMMON");
         System.out.println(commonCustomer.getDiscount());
 
+        CustomerManager customerManager = new CustomerManager(new GoldenCustomer());
+        customerManager.execute();
+
     }
 }
