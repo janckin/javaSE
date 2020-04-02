@@ -26,7 +26,7 @@ public class CarNameReader {
                 String value = pro.getProperty(key);
                 cars.put(key, value);
             }
-
+            in.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
