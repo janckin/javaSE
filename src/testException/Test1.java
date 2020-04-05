@@ -1,12 +1,8 @@
 package testException;
 
-import pattern.factory.Car;
-
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Properties;
 
 public class Test1 {
     public void tryWithResource(String filename) throws IOException {
