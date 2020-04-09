@@ -3,6 +3,7 @@ package dataStructures.princeton.symbolTable;
 /*
  * this class is describe the symbol table
  */
+@SuppressWarnings("all")
 public class ST<Key extends Comparable<Key>, Value> {
     //private int CAPACITY = 10;
     private int size;
@@ -11,7 +12,7 @@ public class ST<Key extends Comparable<Key>, Value> {
     private Node<Key, Value> root;//this value upgrade the keys array,use binary tree
 
     /**
-     * use the link list data structure
+     * use the link testCollection.list data structure
      *
      * @param key key
      * @param val value
@@ -207,7 +208,7 @@ public class ST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * use the link list data structure
+     * use the link testCollection.list data structure
      *
      * @return
      */

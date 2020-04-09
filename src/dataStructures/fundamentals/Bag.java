@@ -5,10 +5,10 @@ import java.util.Iterator;
 
 //ADT： abstract data type, this collection only allow data to input while delete is not allowed
 public class Bag<T> implements Iterable<T> {
-    private int size;
+    protected int size;
     /** use double link-list **/
-    private Node<T> head;
-    private Node<T> pop;
+    protected Node<T> head;
+    protected Node<T> pop;
 
     public Bag() {
         size = 0;
