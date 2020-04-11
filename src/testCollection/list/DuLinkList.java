@@ -1,4 +1,4 @@
-package list;
+package testCollection.list;
 
 public class DuLinkList {
     private DuLNode head;

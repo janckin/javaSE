@@ -1,4 +1,4 @@
-package list;
+package testCollection.list;
 
 public class Node {
     //node content

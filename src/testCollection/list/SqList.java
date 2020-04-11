@@ -1,4 +1,4 @@
-package list;
+package testCollection.list;
 
 public class SqList implements IList {
     protected Object[] listElem;
@@ -28,6 +28,7 @@ public class SqList implements IList {
         return curLen == 0;
     }
 
+    @SuppressWarnings("all")
     @Override
     public void insert(int index, Object o) {
         testIndex(index);
@@ -37,7 +38,6 @@ public class SqList implements IList {
         for (int j = curLen; j < index; j--) {
             listElem[j] = listElem[j - 1];
         }
-
         listElem[index] = o;
         curLen++;
     }

@@ -1,4 +1,4 @@
-package list;
+package testCollection.list;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ public class TestUnit {
     }
 
     //@Test
+    @SuppressWarnings("all")
     public void testLinkList() {
 
         Object[] objects = new Object[26];
@@ -28,6 +29,7 @@ public class TestUnit {
         System.out.println(linkList.indexOf(t3));
     }
 
+    @SuppressWarnings("all")
     public void testSqListClear() {
         SqList sqList = new SqList(26);
         char a = 'a';
@@ -41,31 +43,5 @@ public class TestUnit {
         System.out.println(sqList.get(0));
     }
 
-    public void testConcurrentModException() {
-        List<String> list = new ArrayList<>();
-        list.add("first");
-        list.add("second");
-        list.add("third");
-        list.add("forth");
-        list.add("fifth");
-        list.add("sixth");
-        //int i = 1;
-        /*for (String str : list) {
-            System.out.println(i++);
-            if (str.equals("forth")) {
-                list.remove(str);
-            }
-        }*/
-        /*Iterator<String> it = list.iterator();
-        while(it.hasNext()){
-            System.out.println(i++);
-            String str = it.next();
-            System.out.println(str);
-            if (str.equals("fifth")) {
-                list.remove(str);
-            }
-        }*/
-        list.removeIf(str -> str.equals("fifth"));
-    }
 
 }

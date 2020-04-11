@@ -1,6 +1,6 @@
 package stack;
 
-import list.SqList;
+import testCollection.list.SqList;
 
 public class SqStack extends SqList implements IStack {
 

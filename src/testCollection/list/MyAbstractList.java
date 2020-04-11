@@ -1,4 +1,4 @@
-package list;
+package testCollection.list;
 
 public abstract class MyAbstractList implements MyList {
     protected int size = 0;
@@ -8,8 +8,8 @@ public abstract class MyAbstractList implements MyList {
     }
 
     protected MyAbstractList(Object[] objects) {
-        for (int i = 0; i < objects.length; i++) {
-            this.add(objects[i]);
+        for (Object object : objects) {
+            this.add(object);
         }
     }
 

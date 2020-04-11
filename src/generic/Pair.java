@@ -1,5 +1,6 @@
 package generic;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Objects;
 import java.util.function.Supplier;
 
@@ -38,8 +39,8 @@ public class Pair<T> {
 
     public static <U> Pair<U> initByReflect(Class<U> uClass) {
         try {
-            return new Pair<>(uClass.newInstance(), uClass.newInstance());
-        } catch (IllegalAccessException | InstantiationException e) {
+            return new Pair<>(uClass.getDeclaredConstructor().newInstance(), uClass.getDeclaredConstructor().newInstance());
+        } catch (IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
             return null;
         }

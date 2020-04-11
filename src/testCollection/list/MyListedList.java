@@ -1,4 +1,4 @@
-package list;
+package testCollection.list;
 
 public class MyListedList extends MyAbstractList {
     private Node first, last;
@@ -156,14 +156,14 @@ public class MyListedList extends MyAbstractList {
         } else if (first.element == null) {
             return "MyListedList has first but null";
         }
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append("MyListedList has : ");
         Node current = first;
         while (current != null) {
             if (current.element == null) {
                 sb.append("null" + " , ");
             } else {
-                sb.append(current.element.toString() + " , ");
+                sb.append(current.element.toString()).append(" , ");
             }
             current = current.next;
         }

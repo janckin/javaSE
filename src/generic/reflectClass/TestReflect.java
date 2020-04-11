@@ -26,7 +26,7 @@ public class TestReflect {
     public static void useMethodInvoke(Class<?> clazz){
         try {
             assert clazz != null;//test clazz
-            Parent parent = (Parent) clazz.newInstance();
+            Parent parent = (Parent)clazz.getDeclaredConstructor().newInstance();
             Method ms = clazz.getMethod("setName", String.class);//名字 和 参数的类型
             ms.invoke(parent, "john");
             System.out.println("use invoke: "+parent.toString());

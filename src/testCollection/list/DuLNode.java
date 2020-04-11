@@ -1,4 +1,4 @@
-package list;
+package testCollection.list;
 
 //双向链表节点
 public class DuLNode {
