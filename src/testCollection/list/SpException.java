@@ -2,6 +2,7 @@ package testCollection.list;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.List;
 
 //special exception comes from remove
@@ -32,14 +33,31 @@ public class SpException {
     }
 
     @SuppressWarnings("all")
+    public static void testForeachExceptionEquality() throws ConcurrentModificationException {
+        renewList();
+        int i = 1;
+        Iterator<String> it = list.iterator();
+        while (it.hasNext()) {
+            String str = it.next();
+            System.out.println(i++);
+            System.out.println(str);
+            if (str.equals("forth")) {
+                list.remove(str);//exception, but method still work while loop run to next
+            }
+        }
+    }
+
+    @SuppressWarnings("all")
     public static void testItException() throws ConcurrentModificationException {
         renewList();
         int i = 1;
-        for (String s : list) {
+        Iterator<String> it = list.iterator();
+        while (it.hasNext()) {
             System.out.println(i++);
-            System.out.println(s);
-            if (s.equals("forth")) {
-                list.remove(s);//exception, but method still work while loop run to next
+            String str = it.next();
+            System.out.println(str);
+            if (str.equals("forth")) {
+                list.remove(str);//exception, but method still work while loop run to next
             }
         }
     }
@@ -61,6 +79,15 @@ public class SpException {
         }
 
         try {
+            System.out.println(">>>>>test testForeachExceptionEquality>>>>>");
+            testForeachExceptionEquality();
+        } catch (ConcurrentModificationException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println(list.toString());
+        }
+
+        try {
             System.out.println(">>>>>test testItException>>>>>");
             testItException();
         } catch (ConcurrentModificationException e) {
@@ -68,6 +95,7 @@ public class SpException {
         } finally {
             System.out.println(list.toString());
         }
+
 
         System.out.println(">>>>>test Concurrent>>>>>");
         testConcurrent();
