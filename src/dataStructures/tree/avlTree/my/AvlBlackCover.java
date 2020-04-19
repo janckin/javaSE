@@ -37,6 +37,64 @@ public class AvlBlackCover<T extends Comparable<T>> {
         return newRoot;
     }
 
+    public boolean remove(T data) {
+        if (data == null || root == null) return false;
+        try {
+            Node<T> target = new Node<>(data);
+            root = remove(root, target);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    private Node<T> remove(Node<T> node, Node<T> target) throws IllegalArgumentException {
+        if (node == null) throw new IllegalArgumentException("couldn't find the data");
+
+        if (target.data.compareTo(node.data) > 0) {
+            node.right = remove(node.right, target);
+        } else if (target.data.compareTo(node.data) < 0) {
+            node.left = remove(node.left, target);
+        } else {
+            //a leaf node
+            if (isNullNode(node.right) && isNullNode(node.left)) {
+                return null;
+            }
+
+            //has left node but no right node
+            if (isNullNode(node.right) && !isNullNode(node.left)) {
+                node = node.left;
+            }
+
+            //has right node but no left node
+            if (!isNullNode(node.right) && isNullNode(node.left)) {
+                node = node.right;
+            }
+
+            //has both left and right
+            if (!isNullNode(node.right) && !isNullNode(node.left)) {
+                Node<T> current = node.right;
+                while (!isNullNode(current)) {
+                    if (isNullNode(current.left)) {
+                        break;
+                    } else {
+                        current = current.left;
+                    }
+                }
+                //exchange the smallestNode data to node
+                node.data = current.data;
+
+                //then exchange the node
+                node.right = remove(node.right, current);
+            }
+        }
+
+        //balance
+        node = balance(node);
+        return node;
+    }
+
     public void add(T data) {
         Node<T> newNode = new Node<>(data);
         if (root == null) {
@@ -66,24 +124,22 @@ public class AvlBlackCover<T extends Comparable<T>> {
         }
 
         //balance the node
-        int diff = getHeight(node.left) - getHeight(node.right);
-        if (Math.abs(diff) > GAP) {
-            node = balance(node);
-        } else {
-            node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
-        }
+        node = balance(node);
         return node;
     }
 
-
     private Node<T> balance(Node<T> node) {
         int gap = getHeight(node.left) - getHeight(node.right);
+        if (Math.abs(gap) <= GAP) {
+            node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
+            return node;
+        }
         if (gap > 0) {
             //in left
             if (isNullNode(node.left)) throw new IllegalArgumentException("balance error: node's left child is null");
             Node<T> left = node.left;
             int gap2 = getHeight(left.left) - getHeight(left.right);
-            if (gap2 > 0) {
+            if (gap2 >= 0) {
                 //child's height is bigger than right
                 node = iSharpBalanceInLeft(node);
             } else {
@@ -102,6 +158,7 @@ public class AvlBlackCover<T extends Comparable<T>> {
                 node = iSharpBalanceInRight(node);
             }
         }
+        node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
         return node;
     }
 
@@ -164,6 +221,11 @@ public class AvlBlackCover<T extends Comparable<T>> {
         return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
     }
 
+    /**
+     * this method is used to test
+     *
+     * @param root a new root
+     */
     public void setRoot(Node<T> root) {
         this.root = root;
     }
@@ -183,6 +245,24 @@ public class AvlBlackCover<T extends Comparable<T>> {
                 stack.push(current.left);
             }
             sb.append(current.data).append(" ");
+        }
+        return sb.toString();
+    }
+
+    public String checkedTreeWithHeight() {
+        StringBuilder sb = new StringBuilder();
+        Stack<Node<T>> stack = new Stack<>();
+        Node<T> current = this.root;
+        stack.push(current);
+        while (current != null && !stack.isEmpty()) {
+            current = stack.pop();
+            if (!isNullNode(current.right)) {
+                stack.push(current.right);
+            }
+            if (!isNullNode(current.left)) {
+                stack.push(current.left);
+            }
+            sb.append("[").append(current.data).append(" (h: ").append(current.height).append(")]").append(" ");
         }
         return sb.toString();
     }
