@@ -1,7 +1,4 @@
-package TestExtends;
-
-import java.util.ArrayList;
-import java.util.List;
+package inheritance;
 
 public class Test {
     public static void main(String[] args) {

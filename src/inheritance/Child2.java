@@ -1,4 +1,4 @@
-package TestExtends;
+package inheritance;
 
 public class Child2 extends Parent{
     @Override

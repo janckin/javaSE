@@ -1,4 +1,4 @@
-package TestExtends;
+package inheritance;
 
 public abstract  class AbstractParent {
     public void test(){
