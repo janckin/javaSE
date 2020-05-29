@@ -8,7 +8,7 @@ public enum Season {
         public static final String WINTER="冬天";
     }*/
     //SPRING = "春天",SUMMER="夏天",AUTUMON="秋天",WINTER="冬天";
-    SPRING("春天"), SUMMER("夏天"), AUTUMON("秋天"), WINTER("冬天");
+    SPRING("春天"), SUMMER("夏天"), AUTUMN("秋天"), WINTER("冬天");
 
     private String name;
 
