@@ -1,4 +1,4 @@
-package file.IOKownledge;
+package testIO.IOKownledge;
 
 import java.io.FileInputStream;
 import java.io.IOException;
