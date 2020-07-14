@@ -73,6 +73,8 @@ public class NoBlockServer {
         } catch (IOException e) {
             if (e.getMessage().contains("Connection reset")) {
                 System.out.println("connection closed");
+            } else {
+                e.printStackTrace();
             }
         }/* catch (InterruptedException ex) {
             ex.printStackTrace();
